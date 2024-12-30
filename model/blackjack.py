@@ -154,6 +154,10 @@ class Blackjack:
                     print("You win!")
                     self.playerChips += bet
                     self._playAgain()
+                elif self.dealerCount == self.playerCount:
+                    print()
+                    print("Push.")
+                    self._playAgain()
                 else:
                     continue
 
