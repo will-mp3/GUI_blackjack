@@ -4,12 +4,17 @@ class InstructionFrame:
 
     def __init__(self):
         self.root = tk.Tk()
+        self.root.geometry("500x500")
 
         self.label = tk.Label(self.root, text="WELCOME TO BLACKJACK", font=("Arial", 20))
         self.label.pack(padx=10, pady=10)
 
-        self.instructions = tk.Text(self.root, height=10, width=40, wrap="word")
-        self.instructions.insert("1.0", "Fill Instructions Here")
+        self.instructions = tk.Text(self.root, height=20, width=70, wrap="word")
+        self.instructions.insert("1.0", "1. Place your bet: Before the cards are dealt, players must place a bet.\n\n" 
+                                 "2. Receive your cards: Once all bets have been placed, the dealer will deal two cards to each player, face up.\n\n"
+                                 "3. Decide to hit or stand: After receiving your two cards, you can choose to “hit” and receive additional cards or “stand” and keep your current hand.\n\n"
+                                 "4. Dealer’s turn: After all players have had their turn, the dealer will reveal their face-down card and hit or stand according to predetermined rules.\n\n"
+                                 "5. Determine the winner: If neither the player nor the dealer busts, the person with the highest hand value wins.\n")
         self.instructions.config(state=tk.DISABLED)
         self.instructions.pack(pady=10)
 
