@@ -4,7 +4,6 @@ class InstructionFrame:
 
     def __init__(self):
         self.root = tk.Tk()
-        self.root.geometry("500x500")
 
         self.frame = tk.Frame(self.root)
         self.frame.pack(pady=20)
@@ -19,7 +18,7 @@ class InstructionFrame:
                                  "4. Dealer’s turn: After all players have had their turn, the dealer will reveal their face-down card and hit or stand according to predetermined rules.\n\n"
                                  "5. Determine the winner: If neither the player nor the dealer busts, the person with the highest hand value wins.\n")
         self.instructions.config(state=tk.DISABLED)
-        self.instructions.pack(pady=10)
+        self.instructions.pack(padx=10, pady=10)
 
         self.button = tk.Button(self.frame, text="Lets Go!", font=("Arial", 18), command=self.close)
         self.button.pack(padx=10, pady=10)
