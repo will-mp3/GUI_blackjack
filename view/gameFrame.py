@@ -4,8 +4,12 @@ from tkinter import messagebox
 class GameFrame:
 
     def __init__(self):
+
         self.root = tk.Tk()
         self.root.title("Blackjack")
+
+        self.frame = tk.Frame(self.root, bg="#008000", highlightbackground="#0f4d0f", highlightthickness=8)
+        self.frame.pack()
 
         # menu bar creation
         self.menubar = tk.Menu(self.root)
@@ -16,7 +20,10 @@ class GameFrame:
         self.menubar.add_cascade(menu=self.optionmenu, label="Options")
         self.root.config(menu=self.menubar)
 
-        
+        self.label = tk.Label(self.root, text="WELCOME TO BLACKJACK", font=("Arial", 20))
+        self.label.pack(padx=10, pady=10)
+
+        self.root.mainloop()
 
     def table(self):
         # create exit, hit, stand, and double buttons for player interaction
@@ -44,4 +51,4 @@ class GameFrame:
     def deckCount(self):
         pass
 
-    
+GameFrame()
