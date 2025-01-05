@@ -8,6 +8,7 @@ class GameFrame:
         self.root = tk.Tk()
         self.root.title("Blackjack")
 
+        # primary frame creation
         self.frame = tk.Frame(self.root, bg="#008000", highlightbackground="#0f4d0f", highlightthickness=8)
         self.frame.pack()
 
@@ -20,6 +21,7 @@ class GameFrame:
         self.menubar.add_cascade(menu=self.optionmenu, label="Options")
         self.root.config(menu=self.menubar)
 
+        # primary label creation
         self.label = tk.Label(self.root, text="WELCOME TO BLACKJACK", font=("Arial", 20))
         self.label.pack(padx=10, pady=10)
 
