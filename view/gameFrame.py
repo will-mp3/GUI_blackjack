@@ -5,6 +5,7 @@ class GameFrame:
 
     def __init__(self):
         self.root = tk.Tk()
+        self.root.title("Blackjack")
 
         # menu bar creation
         self.menubar = tk.Menu(self.root)
@@ -16,7 +17,6 @@ class GameFrame:
         self.root.config(menu=self.menubar)
 
         
-
 
     def table(self):
         # create exit, hit, stand, and double buttons for player interaction
