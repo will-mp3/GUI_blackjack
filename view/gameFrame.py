@@ -15,16 +15,16 @@ class GameFrame:
         # - inbetween the two sets of cards, the current bet on the table
         pass
 
-    def exitButton(self):
+    def exit(self):
         pass
 
-    def hitButton(self):
+    def hit(self):
         pass
 
-    def standButton(self):
+    def stand(self):
         pass
 
-    def doubleButton(self):
+    def double(self):
         pass
 
     
