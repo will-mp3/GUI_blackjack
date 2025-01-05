@@ -4,7 +4,19 @@ from tkinter import messagebox
 class GameFrame:
 
     def __init__(self):
-        pass
+        self.root = tk.Tk()
+
+        # menu bar creation
+        self.menubar = tk.Menu(self.root)
+        self.optionmenu = tk.Menu(self.menubar, tearoff=0)
+        self.optionmenu.add_command(label="Force Close", command=exit)
+        self.optionmenu.add_separator()
+        self.optionmenu.add_command(label="Change Deck Count", command=self.deckCount)
+        self.menubar.add_cascade(menu=self.optionmenu, label="Options")
+        self.root.config(menu=self.menubar)
+
+        
+
 
     def table(self):
         # create exit, hit, stand, and double buttons for player interaction
@@ -27,6 +39,9 @@ class GameFrame:
         pass
 
     def double(self):
+        pass
+
+    def deckCount(self):
         pass
 
     
