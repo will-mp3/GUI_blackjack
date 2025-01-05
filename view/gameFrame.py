@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 
 class GameFrame:
 
@@ -16,7 +17,8 @@ class GameFrame:
         pass
 
     def exit(self):
-        pass
+        if messagebox.askyesno(title="Quit?", message="Do you really want to quit?"):
+            self.root.destroy()
 
     def hit(self):
         pass
