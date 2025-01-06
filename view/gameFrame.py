@@ -15,7 +15,7 @@ class GameFrame:
         # menu bar creation
         self.menubar = tk.Menu(self.root)
         self.optionmenu = tk.Menu(self.menubar, tearoff=0)
-        self.optionmenu.add_command(label="Force Close", command=self.exit)
+        self.optionmenu.add_command(label="Close", command=self.exit)
         self.optionmenu.add_separator()
         self.optionmenu.add_command(label="Change Deck Count", command=self.deckCount)
         self.menubar.add_cascade(menu=self.optionmenu, label="Options")
