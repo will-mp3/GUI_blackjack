@@ -10,20 +10,24 @@ class GameFrame:
 
         # primary frame creation
         self.frame = tk.Frame(self.root, bg="#008000", highlightbackground="#0f4d0f", highlightthickness=8)
-        self.frame.pack()
+        self.frame.grid()
 
         # menu bar creation
         self.menubar = tk.Menu(self.root)
         self.optionmenu = tk.Menu(self.menubar, tearoff=0)
-        self.optionmenu.add_command(label="Force Close", command=exit)
+        self.optionmenu.add_command(label="Force Close", command=self.exit)
         self.optionmenu.add_separator()
         self.optionmenu.add_command(label="Change Deck Count", command=self.deckCount)
         self.menubar.add_cascade(menu=self.optionmenu, label="Options")
         self.root.config(menu=self.menubar)
 
+        # button creation
+        self.button = tk.Button(self.root, text="Exit", font=("Arial", 18), command=self.exit)
+        self.button.grid(row=0, column=10, padx=10, pady=10)
+
         # primary label creation
-        self.label = tk.Label(self.root, text="WELCOME TO BLACKJACK", font=("Arial", 20))
-        self.label.pack(padx=10, pady=10)
+        self.label = tk.Label(self.root, text="Bank", font=("Arial", 20))
+        self.label.grid(row=0, column = 0, padx=10, pady=10)
 
         self.root.mainloop()
 
