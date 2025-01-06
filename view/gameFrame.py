@@ -40,7 +40,7 @@ class GameFrame:
         self.label.pack(side="top", anchor="nw", padx=10, pady=10)
 
         self.label = tk.Label(self.root, text="Bet", font=("Arial", 20))
-        self.label.pack(padx=10, pady=10)
+        self.label.pack(side="top", padx=10, pady=10)
 
         self.root.mainloop()
 
