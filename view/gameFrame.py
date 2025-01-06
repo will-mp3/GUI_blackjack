@@ -7,6 +7,7 @@ class GameFrame:
 
         self.root = tk.Tk()
         self.root.title("Blackjack")
+        self.root.geometry("500x500")
 
         # primary frame creation
         self.frame = tk.Frame(self.root, bg="#008000", highlightbackground="#0f4d0f", highlightthickness=8)
@@ -34,9 +35,12 @@ class GameFrame:
         self.button = tk.Button(self.root, text="Double", font=("Arial", 18), command=self.double)
         self.button.grid(row=10, column=10, padx=10, pady=10)
 
-        # primary label creation
+        # label creation
         self.label = tk.Label(self.root, text="Bank", font=("Arial", 20))
         self.label.grid(row=0, column = 0, padx=10, pady=10)
+
+        self.label = tk.Label(self.root, text="Bet", font=("Arial", 20))
+        self.label.grid(row=5, column = 5, padx=10, pady=10)
 
         self.root.mainloop()
 
