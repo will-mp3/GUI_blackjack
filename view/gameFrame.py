@@ -25,6 +25,15 @@ class GameFrame:
         self.button = tk.Button(self.root, text="Exit", font=("Arial", 18), command=self.exit)
         self.button.grid(row=0, column=10, padx=10, pady=10)
 
+        self.button = tk.Button(self.root, text="Hit", font=("Arial", 18), command=self.hit)
+        self.button.grid(row=8, column=10, padx=10, pady=10)
+
+        self.button = tk.Button(self.root, text="Stand", font=("Arial", 18), command=self.stand)
+        self.button.grid(row=9, column=10, padx=10, pady=10)
+
+        self.button = tk.Button(self.root, text="Double", font=("Arial", 18), command=self.double)
+        self.button.grid(row=10, column=10, padx=10, pady=10)
+
         # primary label creation
         self.label = tk.Label(self.root, text="Bank", font=("Arial", 20))
         self.label.grid(row=0, column = 0, padx=10, pady=10)
