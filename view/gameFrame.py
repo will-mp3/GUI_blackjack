@@ -7,7 +7,7 @@ class GameFrame(tk.Frame):
         super().__init__(master)
         self.master = master
         self.master.title("blackjack")
-        self.master.configure(bg="#008000")
+        self.master.configure(bg="#228B22")
 
         self.create_container()
         self.configure_grid()
@@ -20,7 +20,7 @@ class GameFrame(tk.Frame):
             self.container.grid_columnconfigure(i, weight=1)
 
     def create_container(self):
-        self.container = tk.Frame(self.master, bg="#008000", highlightbackground="red", highlightthickness=8)
+        self.container = tk.Frame(self.master, bg="#228B22", highlightbackground="#4B3621", highlightthickness=12)
         self.container.grid(row=0, column=0, rowspan=10, columnspan=10, padx=10, pady=10, sticky="nsew")
 
         for i in range(10):
@@ -43,7 +43,7 @@ class GameFrame(tk.Frame):
         self.button = tk.Button(self.container, text="Exit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.exit)
         self.button.grid(row=0, column=9, sticky="ne", padx=10, pady=10)
 
-        self.button = tk.Button(self.container, text="Hit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.hit)
+        self.button = tk.Button(self.container, text="Hit", font=("Arial", 20), bg="#8B0000", fg="#353e43", command=self.hit)
         self.button.grid(row=7, column=9, sticky="se", padx=10, pady=10)
 
         self.button = tk.Button(self.container, text="Stand", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.stand)
@@ -53,10 +53,10 @@ class GameFrame(tk.Frame):
         self.button.grid(row=9, column=9, sticky="se", padx=10, pady=10)
 
         # label creation
-        self.label = tk.Label(self.container, text="Bank", font=("Arial", 20), bg="#ccffcc", fg="#353e43")
+        self.label = tk.Label(self.container, text="Bank", font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
         self.label.grid(row=0, column=0, sticky="nw", padx=10, pady=10)
 
-        self.label = tk.Label(self.container, text="Bet", font=("Arial", 20), bg="#ccffcc", fg="#353e43")
+        self.label = tk.Label(self.container, text="Bet", font=("Arial", 20),  bg="#FFFFFF", fg="#353e43")
         self.label.grid(row=5, column=5, padx=10, pady=10)
 
     def table(self):
