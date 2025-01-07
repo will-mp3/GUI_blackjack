@@ -7,9 +7,14 @@ class GameFrame(tk.Frame):
         super().__init__(master)
         self.master = master
         self.master.title("blackjack")
-        self.pack(fill="both", expand=True)
+        self.grid(row=0, column=0, sticky="nsew")
+        self.configure_grid()
         self.create_widgets()
 
+    def configure_grid(self):
+        for i in range(11):
+            self.grid_rowconfigure(i, weight=1)
+            self.grid_columnconfigure(i, weight=1)
 
     def create_widgets(self):
 
@@ -22,34 +27,25 @@ class GameFrame(tk.Frame):
         self.menubar.add_cascade(menu=self.optionmenu, label="Options")
         self.master.config(menu=self.menubar)
 
-        for i in range(3):  # 3 rows
-            self.grid_rowconfigure(i, weight=1)
-        for j in range(3):  # 3 columns
-            self.grid_columnconfigure(j, weight=1)
-
-        # primary frame creation
-        self.frame = tk.Frame(self.master, bg="#008000", highlightbackground="#0f4d0f", highlightthickness=8)
-        self.frame.pack()
-
         # button creation
         self.button = tk.Button(self.master, text="Exit", font=("Arial", 18), command=self.exit)
-        self.button.pack(side="top", anchor="ne", padx=10, pady=10)
+        self.button.grid(row=0, column=10, sticky="ne")
 
         self.button = tk.Button(self.master, text="Hit", font=("Arial", 18), command=self.hit)
-        self.button.pack(side="bottom", anchor="ne", padx=10, pady=10)
+        self.button.grid(row=8, column=10, sticky="se")
 
         self.button = tk.Button(self.master, text="Stand", font=("Arial", 18), command=self.stand)
-        self.button.pack(side="bottom", anchor="ne", padx=10, pady=10)
+        self.button.grid(row=9, column=10, sticky="se")
 
         self.button = tk.Button(self.master, text="Double", font=("Arial", 18), command=self.double)
-        self.button.pack(side="bottom", anchor="ne", padx=10, pady=10)
+        self.button.grid(row=10, column=10, sticky="se")
 
         # label creation
         self.label = tk.Label(self.master, text="Bank", font=("Arial", 20))
-        self.label.pack(side="top", anchor="nw", padx=10, pady=10)
+        self.label.grid(row=0, column=0, sticky="nw")
 
         self.label = tk.Label(self.master, text="Bet", font=("Arial", 20))
-        self.label.pack(side="top", padx=10, pady=10)
+        self.label.grid(row=5, column=5)
 
     def table(self):
         # create exit, hit, stand, and double buttons for player interaction
