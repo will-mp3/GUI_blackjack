@@ -6,6 +6,7 @@ class GameFrame(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
         self.master = master
+        self.master.title("blackjack")
         self.pack(fill="both", expand=True)
         self.create_widgets()
 
