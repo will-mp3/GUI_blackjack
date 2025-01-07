@@ -35,17 +35,17 @@ class GameFrame(tk.Frame):
         self.button.grid(row=7, column=9, sticky="se", padx=10, pady=10)
 
         self.button = tk.Button(self.master, text="Stand", font=("Arial", 18), command=self.stand)
-        self.button.grid(row=8, column=9, sticky="se")
+        self.button.grid(row=8, column=9, sticky="se", padx=10, pady=10)
 
         self.button = tk.Button(self.master, text="Double", font=("Arial", 18), command=self.double)
-        self.button.grid(row=9, column=9, sticky="se")
+        self.button.grid(row=9, column=9, sticky="se", padx=10, pady=10)
 
         # label creation
         self.label = tk.Label(self.master, text="Bank", font=("Arial", 20))
-        self.label.grid(row=0, column=0, sticky="nw")
+        self.label.grid(row=0, column=0, sticky="nw", padx=10, pady=10)
 
         self.label = tk.Label(self.master, text="Bet", font=("Arial", 20))
-        self.label.grid(row=5, column=5)
+        self.label.grid(row=5, column=5, padx=10, pady=10)
 
     def table(self):
         # create exit, hit, stand, and double buttons for player interaction
