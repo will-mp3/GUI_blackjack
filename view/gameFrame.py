@@ -57,7 +57,7 @@ class GameFrame(tk.Frame):
         self.label.grid(row=0, column=0, sticky="nw", padx=10, pady=10)
 
         self.label = tk.Label(self.container, text="Bet", font=("Arial", 20), bg="#ccffcc", fg="#353e43")
-        self.label.grid(row=6, column=6, padx=10, pady=10)
+        self.label.grid(row=5, column=5, padx=10, pady=10)
 
     def table(self):
         # create exit, hit, stand, and double buttons for player interaction
@@ -87,6 +87,6 @@ class GameFrame(tk.Frame):
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.geometry("500x500")
+    root.geometry("800x800")
     game = GameFrame(master=root)
     root.mainloop()
