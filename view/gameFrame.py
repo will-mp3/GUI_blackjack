@@ -7,7 +7,7 @@ class GameFrame(tk.Frame):
         super().__init__(master)
         self.master = master
         self.master.title("blackjack")
-        self.grid(row=0, column=0, sticky="nsew")
+        self.master.configure(bg="#008000")
 
         self.configure_grid()
         self.create_widgets()
@@ -43,11 +43,11 @@ class GameFrame(tk.Frame):
         self.button.grid(row=9, column=9, sticky="se", padx=10, pady=10)
 
         # label creation
-        self.label = tk.Label(self.master, text="Bank", font=("Arial", 20))
+        self.label = tk.Label(self.master, text="Bank", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3)
         self.label.grid(row=0, column=0, sticky="nw", padx=10, pady=10)
 
         self.label = tk.Label(self.master, text="Bet", font=("Arial", 20))
-        self.label.grid(row=5, column=5, padx=10, pady=10)
+        self.label.grid(row=6, column=6, padx=10, pady=10)
 
     def table(self):
         # create exit, hit, stand, and double buttons for player interaction
