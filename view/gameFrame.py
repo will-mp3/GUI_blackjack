@@ -40,16 +40,16 @@ class GameFrame(tk.Frame):
         self.master.config(menu=self.menubar)
 
         # button creation
-        self.button = tk.Button(self.container, text="Exit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.exit)
+        self.button = tk.Button(self.container, text="Exit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.exit)
         self.button.grid(row=0, column=9, sticky="ne", padx=10, pady=10)
 
-        self.button = tk.Button(self.container, text="Hit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.hit)
+        self.button = tk.Button(self.container, text="Hit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.hit)
         self.button.grid(row=7, column=9, sticky="se", padx=10, pady=10)
 
-        self.button = tk.Button(self.container, text="Stand", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.stand)
+        self.button = tk.Button(self.container, text="Stand", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.stand)
         self.button.grid(row=8, column=9, sticky="se", padx=10, pady=10)
 
-        self.button = tk.Button(self.container, text="Double", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.double)
+        self.button = tk.Button(self.container, text="Double", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.double)
         self.button.grid(row=9, column=9, sticky="se", padx=10, pady=10)
 
         # label creation
