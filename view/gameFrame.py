@@ -9,6 +9,9 @@ class GameFrame:
         self.root.title("Blackjack")
         self.root.geometry("500x500")
 
+        self.create_widgets()
+
+    def create_widgets(self):
         # primary frame creation
         self.frame = tk.Frame(self.root, bg="#008000", highlightbackground="#0f4d0f", highlightthickness=8)
         self.frame.pack()
