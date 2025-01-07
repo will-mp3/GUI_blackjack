@@ -12,9 +12,9 @@ class GameFrame(tk.Frame):
         self.create_widgets()
 
     def configure_grid(self):
-        for i in range(11):
-            self.grid_rowconfigure(i, weight=1)
-            self.grid_columnconfigure(i, weight=1)
+        for i in range(10):
+            self.master.grid_rowconfigure(i, weight=1)
+            self.master.grid_columnconfigure(i, weight=1)
 
     def create_widgets(self):
 
@@ -29,16 +29,16 @@ class GameFrame(tk.Frame):
 
         # button creation
         self.button = tk.Button(self.master, text="Exit", font=("Arial", 18), command=self.exit)
-        self.button.grid(row=0, column=10, sticky="ne")
+        self.button.grid(row=0, column=9, sticky="ne", padx=10, pady=10)
 
         self.button = tk.Button(self.master, text="Hit", font=("Arial", 18), command=self.hit)
-        self.button.grid(row=8, column=10, sticky="se")
+        self.button.grid(row=7, column=9, sticky="se", padx=10, pady=10)
 
         self.button = tk.Button(self.master, text="Stand", font=("Arial", 18), command=self.stand)
-        self.button.grid(row=9, column=10, sticky="se")
+        self.button.grid(row=8, column=9, sticky="se")
 
         self.button = tk.Button(self.master, text="Double", font=("Arial", 18), command=self.double)
-        self.button.grid(row=10, column=10, sticky="se")
+        self.button.grid(row=9, column=9, sticky="se")
 
         # label creation
         self.label = tk.Label(self.master, text="Bank", font=("Arial", 20))
