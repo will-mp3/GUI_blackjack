@@ -9,16 +9,26 @@ class GameFrame(tk.Frame):
         self.master.title("blackjack")
         self.master.configure(bg="#008000")
 
+        self.create_container()
         self.configure_grid()
         self.create_widgets()
 
     def configure_grid(self):
         # 9 x 9 grid to allow for centering
         for i in range(10):
+            self.container.grid_rowconfigure(i, weight=1)
+            self.container.grid_columnconfigure(i, weight=1)
+
+    def create_container(self):
+        self.container = tk.Frame(self.master, bg="#008000", highlightbackground="red", highlightthickness=8)
+        self.container.grid(row=0, column=0, rowspan=10, columnspan=10, padx=10, pady=10, sticky="nsew")
+
+        for i in range(10):
             self.master.grid_rowconfigure(i, weight=1)
             self.master.grid_columnconfigure(i, weight=1)
 
     def create_widgets(self):
+        self.container.grid_propagate(False)   
 
         # menu bar creation
         self.menubar = tk.Menu(self.master)
@@ -30,23 +40,23 @@ class GameFrame(tk.Frame):
         self.master.config(menu=self.menubar)
 
         # button creation
-        self.button = tk.Button(self.master, text="Exit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.exit)
+        self.button = tk.Button(self.container, text="Exit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.exit)
         self.button.grid(row=0, column=9, sticky="ne", padx=10, pady=10)
 
-        self.button = tk.Button(self.master, text="Hit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.hit)
+        self.button = tk.Button(self.container, text="Hit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.hit)
         self.button.grid(row=7, column=9, sticky="se", padx=10, pady=10)
 
-        self.button = tk.Button(self.master, text="Stand", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.stand)
+        self.button = tk.Button(self.container, text="Stand", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.stand)
         self.button.grid(row=8, column=9, sticky="se", padx=10, pady=10)
 
-        self.button = tk.Button(self.master, text="Double", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.double)
+        self.button = tk.Button(self.container, text="Double", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.double)
         self.button.grid(row=9, column=9, sticky="se", padx=10, pady=10)
 
         # label creation
-        self.label = tk.Label(self.master, text="Bank", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3)
+        self.label = tk.Label(self.container, text="Bank", font=("Arial", 20), bg="#ccffcc", fg="#353e43")
         self.label.grid(row=0, column=0, sticky="nw", padx=10, pady=10)
 
-        self.label = tk.Label(self.master, text="Bet", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3)
+        self.label = tk.Label(self.container, text="Bet", font=("Arial", 20), bg="#ccffcc", fg="#353e43")
         self.label.grid(row=6, column=6, padx=10, pady=10)
 
     def table(self):
