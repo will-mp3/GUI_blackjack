@@ -30,23 +30,23 @@ class GameFrame(tk.Frame):
         self.master.config(menu=self.menubar)
 
         # button creation
-        self.button = tk.Button(self.master, text="Exit", font=("Arial", 18), command=self.exit)
+        self.button = tk.Button(self.master, text="Exit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.exit)
         self.button.grid(row=0, column=9, sticky="ne", padx=10, pady=10)
 
-        self.button = tk.Button(self.master, text="Hit", font=("Arial", 18), command=self.hit)
+        self.button = tk.Button(self.master, text="Hit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.hit)
         self.button.grid(row=7, column=9, sticky="se", padx=10, pady=10)
 
-        self.button = tk.Button(self.master, text="Stand", font=("Arial", 18), command=self.stand)
+        self.button = tk.Button(self.master, text="Stand", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.stand)
         self.button.grid(row=8, column=9, sticky="se", padx=10, pady=10)
 
-        self.button = tk.Button(self.master, text="Double", font=("Arial", 18), command=self.double)
+        self.button = tk.Button(self.master, text="Double", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3, command=self.double)
         self.button.grid(row=9, column=9, sticky="se", padx=10, pady=10)
 
         # label creation
         self.label = tk.Label(self.master, text="Bank", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3)
         self.label.grid(row=0, column=0, sticky="nw", padx=10, pady=10)
 
-        self.label = tk.Label(self.master, text="Bet", font=("Arial", 20))
+        self.label = tk.Label(self.master, text="Bet", font=("Arial", 20), bg="#ccffcc", fg="#353e43", highlightbackground="#ccffcc", highlightthickness=3)
         self.label.grid(row=6, column=6, padx=10, pady=10)
 
     def table(self):
