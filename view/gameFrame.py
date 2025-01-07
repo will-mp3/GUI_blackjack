@@ -8,10 +8,12 @@ class GameFrame(tk.Frame):
         self.master = master
         self.master.title("blackjack")
         self.grid(row=0, column=0, sticky="nsew")
+
         self.configure_grid()
         self.create_widgets()
 
     def configure_grid(self):
+        # 9 x 9 grid to allow for centering
         for i in range(10):
             self.master.grid_rowconfigure(i, weight=1)
             self.master.grid_columnconfigure(i, weight=1)
@@ -76,5 +78,5 @@ class GameFrame(tk.Frame):
 if __name__ == "__main__":
     root = tk.Tk()
     root.geometry("500x500")
-    app = GameFrame(master=root)
+    game = GameFrame(master=root)
     root.mainloop()
