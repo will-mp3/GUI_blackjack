@@ -12,9 +12,6 @@ class GameFrame(tk.Frame):
 
 
     def create_widgets(self):
-        # primary frame creation
-        self.frame = tk.Frame(self.master, bg="#008000", highlightbackground="#0f4d0f", highlightthickness=8)
-        self.frame.pack()
 
         # menu bar creation
         self.menubar = tk.Menu(self.master)
@@ -24,6 +21,15 @@ class GameFrame(tk.Frame):
         self.optionmenu.add_command(label="Change Deck Count", command=self.deckCount)
         self.menubar.add_cascade(menu=self.optionmenu, label="Options")
         self.master.config(menu=self.menubar)
+
+        for i in range(3):  # 3 rows
+            self.grid_rowconfigure(i, weight=1)
+        for j in range(3):  # 3 columns
+            self.grid_columnconfigure(j, weight=1)
+
+        # primary frame creation
+        self.frame = tk.Frame(self.master, bg="#008000", highlightbackground="#0f4d0f", highlightthickness=8)
+        self.frame.pack()
 
         # button creation
         self.button = tk.Button(self.master, text="Exit", font=("Arial", 18), command=self.exit)
