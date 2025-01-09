@@ -89,7 +89,8 @@ class GameFrame(tk.Frame):
     def upateValues(self):
         pass
 
-    
+    def checkCounts(self):
+        pass
 
 if __name__ == "__main__":
     root = tk.Tk()
