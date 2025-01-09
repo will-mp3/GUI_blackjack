@@ -118,10 +118,3 @@ class GameFrame(tk.Frame):
         calling this function will instantiate a new hand
         """
         pass
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    root.geometry("800x800")
-    game = Blackjack()
-    gameState = GameFrame(master=root, game=game)
-    root.mainloop()
