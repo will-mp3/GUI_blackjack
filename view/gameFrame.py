@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
-
+from model.blackjack import Blackjack
 
 class GameFrame(tk.Frame):
 
@@ -122,5 +122,6 @@ class GameFrame(tk.Frame):
 if __name__ == "__main__":
     root = tk.Tk()
     root.geometry("800x800")
-    game = GameFrame(master=root)
+    game = Blackjack()
+    gameState = GameFrame(master=root, game=game)
     root.mainloop()
