@@ -107,6 +107,14 @@ class GameFrame(tk.Frame):
         """
         pass
 
+    def deckCount(self):
+        """
+        to be used with menu option
+        can change deck count from two up to eight
+        calling this function will instantiate a new hand
+        """
+        pass
+
 if __name__ == "__main__":
     root = tk.Tk()
     root.geometry("800x800")
