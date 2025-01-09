@@ -92,6 +92,9 @@ class GameFrame(tk.Frame):
     def checkCounts(self):
         pass
 
+    def newHand(self):
+        pass
+
 if __name__ == "__main__":
     root = tk.Tk()
     root.geometry("800x800")
