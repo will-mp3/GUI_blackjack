@@ -3,11 +3,13 @@ from tkinter import messagebox
 
 class GameFrame(tk.Frame):
 
-    def __init__(self, master=None):
+    def __init__(self, master=None, game=None):
         super().__init__(master)
         self.master = master
         self.master.title("blackjack")
         self.master.configure(bg="#228B22")
+
+        self.game = game
 
         self.create_container()
         self.configure_grid()
