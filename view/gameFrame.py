@@ -75,6 +75,7 @@ class GameFrame(tk.Frame):
         if messagebox.askyesno(title="Quit?", message="Do you really want to quit?"):
             self.master.destroy()
 
+    # buttons
     def hit(self):
         pass
 
@@ -84,8 +85,11 @@ class GameFrame(tk.Frame):
     def double(self):
         pass
 
-    def deckCount(self):
+    # gameplay
+    def upateValues(self):
         pass
+
+    
 
 if __name__ == "__main__":
     root = tk.Tk()
