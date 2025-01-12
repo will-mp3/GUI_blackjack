@@ -81,9 +81,13 @@ class GameFrame(tk.Frame):
 
     # buttons
     def hit(self):
+        # call the hit method
+        # all values should update within the hit method DO NOT call any exit functions
+        # call check values to determine outcome
         pass
 
     def stand(self):
+        
         pass
 
     def double(self):
