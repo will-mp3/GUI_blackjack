@@ -92,6 +92,9 @@ class GameFrame(tk.Frame):
         pass
 
     def double(self):
+        # when hit, this calls for the player side to halt, after this button is hit the player can no longer interact.
+        # check current player value and decide whether to continue.
+        # and double the bet obviously
         pass
 
     # gameplay
