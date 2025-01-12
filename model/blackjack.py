@@ -82,7 +82,7 @@ class Blackjack:
     def _checkBJ(self):
 
         if self.playerCount == 21:
-            print("Blackjack! You win.")
+            #print("Blackjack! You win.")
             return True
         else:
             return False
