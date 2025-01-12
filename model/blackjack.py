@@ -55,18 +55,18 @@ class Blackjack:
     def _playAgain(self):
 
         if self.playerChips <= 0:
-            print("Out of chips.")
+            #print("Out of chips.")
             return
-        print("Player has", self.playerChips, "chips remaining.")
-        print()
+        #print("Player has", self.playerChips, "chips remaining.")
+        #print()
         choice = input("Would you like to play again? (Y/N) ")
-        print()
+        #print()
         if choice == "Y":
             self.run()
         elif choice == "N":
             return False
         else:
-            print("Invalid input.")
+            #print("Invalid input.")
             self._playAgain()
 
     def _cardEval(self):
