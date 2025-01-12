@@ -91,12 +91,13 @@ class Blackjack:
 
         self.playerHand.append(self.deck.dealCard())
 
-        print("You have", self.playerHand[0].printCard() + ",", self.playerHand[1].printCard(), end="")
+        """print("You have", self.playerHand[0].printCard() + ",", self.playerHand[1].printCard(), end="")
 
         for i in range(len(self.playerHand) - 2): # prints the third card onward
             print(",", self.playerHand[2 + i].printCard(), end="")
-        print()
-
+        print()     
+        """
+        
         self.playerCount = self._getCount("p")
                     
         val = self._cardEval()
