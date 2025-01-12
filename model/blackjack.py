@@ -106,7 +106,7 @@ class Blackjack:
     def _dealerHit(self):
         self.dealerHand.append(self.deck.dealCard())
 
-        print("Dealer showing", self.dealerHand[0].printCard() + ",", self.dealerHand[1].printCard(), end="")
+        #print("Dealer showing", self.dealerHand[0].printCard() + ",", self.dealerHand[1].printCard(), end="")
 
         for i in range(len(self.dealerHand) - 2): # prints the third card onward
             print(",", self.dealerHand[2 + i].printCard(), end="")
