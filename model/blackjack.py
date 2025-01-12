@@ -74,9 +74,9 @@ class Blackjack:
         if self.playerCount <= 21:
             return True
         else:
-            print()
-            print("Player bust.")
-            print()
+            #print()
+            #print("Player bust.")
+            #print()
             return False
 
     def _checkBJ(self):
@@ -97,7 +97,7 @@ class Blackjack:
             print(",", self.playerHand[2 + i].printCard(), end="")
         print()     
         """
-        
+
         self.playerCount = self._getCount("p")
                     
         val = self._cardEval()
