@@ -86,8 +86,8 @@ class Blackjack:
             return True
         else:
             return False
-            
-    def _hit(self):
+    
+    def hit(self):
 
         self.playerHand.append(self.deck.dealCard())
 
@@ -95,8 +95,9 @@ class Blackjack:
 
         for i in range(len(self.playerHand) - 2): # prints the third card onward
             print(",", self.playerHand[2 + i].printCard(), end="")
-        print()     
-        """
+        print() """    
+        
+        print("does this work perhaps")
 
         self.playerCount = self._getCount("p")
                     
