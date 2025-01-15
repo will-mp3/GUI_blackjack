@@ -55,18 +55,13 @@ class Blackjack:
     def _playAgain(self):
 
         if self.playerChips <= 0:
-            #print("Out of chips.")
             return
-        #print("Player has", self.playerChips, "chips remaining.")
-        #print()
         choice = input("Would you like to play again? (Y/N) ")
-        #print()
         if choice == "Y":
             self.run()
         elif choice == "N":
             return False
         else:
-            #print("Invalid input.")
             self._playAgain()
 
     def _cardEval(self):
@@ -74,46 +69,27 @@ class Blackjack:
         if self.playerCount <= 21:
             return True
         else:
-            #print()
-            #print("Player bust.")
-            #print()
             return False
 
     def _checkBJ(self):
 
         if self.playerCount == 21:
-            #print("Blackjack! You win.")
             return True
         else:
             return False
     
     def hit(self):
 
-        self.playerHand.append(self.deck.dealCard())
-
-        """print("You have", self.playerHand[0].printCard() + ",", self.playerHand[1].printCard(), end="")
-
-        for i in range(len(self.playerHand) - 2): # prints the third card onward
-            print(",", self.playerHand[2 + i].printCard(), end="")
-        print() """    
-        
-        print("does this work perhaps")
-
-        self.playerCount = self._getCount("p")
-                    
+        self.playerHand.append(self.deck.dealCard())  
+        self.playerCount = self._getCount("p")          
         val = self._cardEval()
+
+        print("does this work perhaps")
 
         return val
 
     def _dealerHit(self):
         self.dealerHand.append(self.deck.dealCard())
-
-        #print("Dealer showing", self.dealerHand[0].printCard() + ",", self.dealerHand[1].printCard(), end="")
-
-        for i in range(len(self.dealerHand) - 2): # prints the third card onward
-            print(",", self.dealerHand[2 + i].printCard(), end="")
-        print()
-
         self.dealerCount = self._getCount("d")
 
     def _dealerAction(self, bet):
