@@ -84,7 +84,7 @@ class GameFrame(tk.Frame):
         # call the hit method
         # all values should update within the hit method DO NOT call any exit functions
         # call check values to determine outcome
-        pass
+        self.game.hit()
 
     def stand(self):
         # when hit, this calls for the player side to halt, after this button is hit the player can no longer interact.
