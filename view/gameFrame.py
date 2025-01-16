@@ -69,7 +69,9 @@ class GameFrame(tk.Frame):
         self.label = tk.Label(self.container, text="Player", font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
         self.label.grid(row=9, column=5, sticky="s", padx=10, pady=10)
 
-        self.label = tk.Label(self.container, text="Player Cards", font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
+        self.pcount = tk.StringVar()
+        self.pcount.set("0")
+        self.label = tk.Label(self.container, textvariable=self.pcount, font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
         self.label.grid(row=8, column=5, sticky="s", padx=10, pady=10)
 
         self.label = tk.Label(self.container, text="Bet", font=("Arial", 20),  bg="#FFFFFF", fg="#353e43")
@@ -85,6 +87,8 @@ class GameFrame(tk.Frame):
         # all values should update within the hit method DO NOT call any exit functions
         # call check values to determine outcome
         self.game.hit()
+        self.pcount.set(str(self.game.playerCount))
+        
 
     def stand(self):
         # when hit, this calls for the player side to halt, after this button is hit the player can no longer interact.
