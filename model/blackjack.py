@@ -84,8 +84,6 @@ class Blackjack:
         self.playerCount = self._getCount("p")          
         val = self._cardEval()
 
-        print("does this work perhaps")
-
         return val
 
     def _dealerHit(self):
