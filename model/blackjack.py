@@ -1,6 +1,8 @@
 from .deck import Deck
 from .card import Card
 
+import sys
+
 class Blackjack:
 
     def __init__(self, deckCount):
@@ -10,6 +12,14 @@ class Blackjack:
         self.playerCount = 0
         self.dealerCount = 0
         self.playerChips = 100
+
+    def hit(self):
+        self.playerHand.append(self.deck.dealCard())  
+        self.playerCount = self._getCount("p")          
+    
+    def checkPlayer(self):
+        if self.playerCount > 21:
+            sys.exit() 
 
     def _clear(self):
         self.deck = Deck(self.deckCount)
