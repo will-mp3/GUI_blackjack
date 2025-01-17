@@ -2,6 +2,8 @@ from .deck import Deck
 from .card import Card
 
 import sys
+import tkinter as tk
+from tkinter import messagebox
 
 class Blackjack:
 
@@ -19,6 +21,7 @@ class Blackjack:
     
     def checkPlayer(self):
         if self.playerCount > 21:
+            messagebox.showinfo(title="Player Bust", message="Player Bust")
             sys.exit() 
 
     def _clear(self):
