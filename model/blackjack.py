@@ -5,6 +5,8 @@ import sys
 import tkinter as tk
 from tkinter import messagebox
 
+from time import sleep
+
 class Blackjack:
 
     def __init__(self, deckCount):
@@ -37,6 +39,7 @@ class Blackjack:
         else:
             while self.dealerCount <= 17:
                 self._dealerHit()
+                sleep(2.0)
                 if self.dealerCount > 21:
                     pass
                 elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount > self.playerCount: 
