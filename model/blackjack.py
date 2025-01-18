@@ -24,6 +24,36 @@ class Blackjack:
             messagebox.showinfo(title="Player Bust", message="Player Bust")
             sys.exit() 
 
+    def dealerAction(self):
+        if self.dealerCount == 21:
+            self.playerChips -= bet
+            self._playAgain()
+        elif self.dealerCount >= 17:
+            if self.dealerCount > self.playerCount:
+                self.playerChips -= bet
+                self._playAgain()
+            elif self.dealerCount < self.playerCount:
+                self.playerChips += bet
+                self._playAgain()
+            else:
+                self._playAgain()
+        else:
+            while self.dealerCount <= 17:
+                self._dealerHit()
+                if self.dealerCount > 21:
+                    self.playerChips += bet
+                    self._playAgain()
+                elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount > self.playerCount: 
+                    self.playerChips -= bet
+                    self._playAgain()
+                elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount < self.playerCount:
+                    self.playerChips += bet
+                    self._playAgain()
+                elif self.dealerCount == self.playerCount:
+                    self._playAgain()
+                else:
+                    continue
+
     def _clear(self):
         self.deck = Deck(self.deckCount)
         self.dealerHand, self.playerHand = [], []
