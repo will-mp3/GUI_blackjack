@@ -26,6 +26,11 @@ class Blackjack:
             messagebox.showinfo(title="Player Bust", message="Player Bust")
             sys.exit() 
 
+    def dealerHit(self):
+        sleep(1.0)
+        self.dealerHand.append(self.deck.dealCard())
+        self.dealerCount = self._getCount("d")
+
     def dealerAction(self):
         if self.dealerCount == 21:
             pass
@@ -125,10 +130,6 @@ class Blackjack:
         val = self._cardEval()
 
         return val
-
-    def _dealerHit(self):
-        self.dealerHand.append(self.deck.dealCard())
-        self.dealerCount = self._getCount("d")
 
     def _dealerAction(self, bet):
         if self.dealerCount == 21:
