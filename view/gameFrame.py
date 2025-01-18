@@ -63,7 +63,9 @@ class GameFrame(tk.Frame):
         self.label = tk.Label(self.container, text="Dealer", font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
         self.label.grid(row=0, column=5, sticky="n", padx=10, pady=10)
 
-        self.label = tk.Label(self.container, text="Dealer Cards", font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
+        self.dcount = tk.StringVar()
+        self.dcount.set("0")
+        self.label = tk.Label(self.container, textvariable=self.dcount, font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
         self.label.grid(row=1, column=5, sticky="n", padx=10, pady=10)
 
         self.label = tk.Label(self.container, text="Player", font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
