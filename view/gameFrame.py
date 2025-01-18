@@ -98,7 +98,7 @@ class GameFrame(tk.Frame):
         # check current player value and decide whether to continue.
         self.hitbutton["state"] = "disabled"
         self.doublebutton["state"] = "disabled"
-        self.game.dealerAction()
+        self.game.dealerAction() # need to implement here, not updating label each hit
         self.dcount.set(str(self.game.dealerCount))
 
     def double(self):
