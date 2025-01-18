@@ -27,7 +27,6 @@ class Blackjack:
             sys.exit() 
 
     def dealerHit(self):
-        sleep(1.0)
         self.dealerHand.append(self.deck.dealCard())
         self.dealerCount = self._getCount("d")
 
