@@ -44,17 +44,17 @@ class GameFrame(tk.Frame):
         self.master.config(menu=self.menubar)
 
         # button creation
-        self.button = tk.Button(self.container, text="Exit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.exit)
-        self.button.grid(row=0, column=9, sticky="ne", padx=10, pady=10)
+        self.exitbutton = tk.Button(self.container, text="Exit", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.exit)
+        self.exitbutton.grid(row=0, column=9, sticky="ne", padx=10, pady=10)
 
-        self.button = tk.Button(self.container, text="Hit", font=("Arial", 20), bg="#8B0000", fg="#353e43", command=self.hit)
-        self.button.grid(row=7, column=9, sticky="se", padx=10, pady=10)
+        self.hitbutton = tk.Button(self.container, text="Hit", font=("Arial", 20), bg="#8B0000", fg="#353e43", command=self.hit)
+        self.hitbutton.grid(row=7, column=9, sticky="se", padx=10, pady=10)
 
-        self.button = tk.Button(self.container, text="Stand", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.stand)
-        self.button.grid(row=8, column=9, sticky="se", padx=10, pady=10)
+        self.standbutton = tk.Button(self.container, text="Stand", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.stand)
+        self.standbutton.grid(row=8, column=9, sticky="se", padx=10, pady=10)
 
-        self.button = tk.Button(self.container, text="Double", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.double)
-        self.button.grid(row=9, column=9, sticky="se", padx=10, pady=10)
+        self.doublebutton = tk.Button(self.container, text="Double", font=("Arial", 20), bg="#ccffcc", fg="#353e43", command=self.double)
+        self.doublebutton.grid(row=9, column=9, sticky="se", padx=10, pady=10)
 
         # label creation
         self.label = tk.Label(self.container, text="Bank", font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
@@ -94,7 +94,8 @@ class GameFrame(tk.Frame):
     def stand(self):
         # when hit, this calls for the player side to halt, after this button is hit the player can no longer interact.
         # check current player value and decide whether to continue.
-        pass
+        self.hitbutton["state"] = "disabled"
+        self.doublebutton["state"] = "disabled"
 
     def double(self):
         # when hit, this calls for the player side to halt, after this button is hit the player can no longer interact.
