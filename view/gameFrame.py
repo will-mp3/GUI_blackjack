@@ -98,6 +98,8 @@ class GameFrame(tk.Frame):
         # check current player value and decide whether to continue.
         self.hitbutton["state"] = "disabled"
         self.doublebutton["state"] = "disabled"
+        self.game.dealerAction()
+        self.dcount.set(str(self.game.dealerCount))
 
     def double(self):
         # when hit, this calls for the player side to halt, after this button is hit the player can no longer interact.

@@ -41,13 +41,13 @@ class Blackjack:
                 self._dealerHit()
                 sleep(2.0)
                 if self.dealerCount > 21:
-                    pass
+                    sys.exit() 
                 elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount > self.playerCount: 
-                    pass
+                    sys.exit() 
                 elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount < self.playerCount:
-                    pass
+                    sys.exit() 
                 elif self.dealerCount == self.playerCount:
-                    pass
+                    sys.exit() 
                 else:
                     continue
 
