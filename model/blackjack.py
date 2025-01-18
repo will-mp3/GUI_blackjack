@@ -26,31 +26,25 @@ class Blackjack:
 
     def dealerAction(self):
         if self.dealerCount == 21:
-            self.playerChips -= bet
-            self._playAgain()
+            pass
         elif self.dealerCount >= 17:
             if self.dealerCount > self.playerCount:
-                self.playerChips -= bet
-                self._playAgain()
+                pass
             elif self.dealerCount < self.playerCount:
-                self.playerChips += bet
-                self._playAgain()
+                pass
             else:
-                self._playAgain()
+                pass
         else:
             while self.dealerCount <= 17:
                 self._dealerHit()
                 if self.dealerCount > 21:
-                    self.playerChips += bet
-                    self._playAgain()
+                    pass
                 elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount > self.playerCount: 
-                    self.playerChips -= bet
-                    self._playAgain()
+                    pass
                 elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount < self.playerCount:
-                    self.playerChips += bet
-                    self._playAgain()
+                    pass
                 elif self.dealerCount == self.playerCount:
-                    self._playAgain()
+                    pass
                 else:
                     continue
 
