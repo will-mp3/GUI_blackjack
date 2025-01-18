@@ -1,8 +1,8 @@
+from model.blackjack import Blackjack
+
 import tkinter as tk
 from tkinter import messagebox
 from time import sleep
-
-from model.blackjack import Blackjack
 
 class GameFrame(tk.Frame):
 
