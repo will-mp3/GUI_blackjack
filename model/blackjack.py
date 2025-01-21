@@ -73,17 +73,9 @@ class Blackjack:
             messagebox.showinfo(title="Player Bust", message="Player Bust")
             sys.exit()
 
-    """
-    def checkDealer(self):
-        if self.dealerCount > 21:
-            messagebox.showinfo(title="Dealer Bust", message="Dealer Bust")
-            sys.exit() 
-    """ 
-
     def dealerHit(self):
         self.dealerHand.append(self.deck.dealCard())
         self.dealerCount = self.getCount("d")
-        # self.checkDealer()
 
     def dealerAction(self):
         if self.dealerCount == 21:
