@@ -19,39 +19,54 @@ class Blackjack:
 
     def hit(self):
         self.playerHand.append(self.deck.dealCard())  
-        self.playerCount = self._getCount("p")          
+        self.playerCount = self._getCount("p")
+        self.checkPlayer()          
     
     def checkPlayer(self):
         if self.playerCount > 21:
             messagebox.showinfo(title="Player Bust", message="Player Bust")
-            sys.exit() 
+            sys.exit()
+
+    def checkDealer(self):
+        if self.playerCount > 21:
+            messagebox.showinfo(title="Dealer Bust", message="Dealer Bust")
+            sys.exit()  
 
     def dealerHit(self):
         self.dealerHand.append(self.deck.dealCard())
         self.dealerCount = self._getCount("d")
+        self.checkDealer()
 
     def dealerAction(self):
         if self.dealerCount == 21:
-            pass
+            messagebox.showinfo(title="Dealer 21", message="Dealer 21")
+            sys.exit()
         elif self.dealerCount >= 17:
             if self.dealerCount > self.playerCount:
-                pass
+                messagebox.showinfo(title="Dealer Wins", message="Dealer Wins")
+                sys.exit()
             elif self.dealerCount < self.playerCount:
-                pass
+                messagebox.showinfo(title="Player Wins", message="Player Wins")
+                sys.exit()
             else:
-                pass
+                messagebox.showinfo(title="Dealer 21", message="Dealer 21")
+                sys.exit()
         else:
             while self.dealerCount <= 17:
                 sleep(2.0)
                 self._dealerHit()
                 if self.dealerCount > 21:
-                    pass
+                    messagebox.showinfo(title="Dealer Bust", message="Dealer Bust")
+                    sys.exit()
                 elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount > self.playerCount: 
-                    pass 
+                    messagebox.showinfo(title="Dealer Wins", message="Dealers Wins")
+                    sys.exit()
                 elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount < self.playerCount:
-                    pass 
+                    messagebox.showinfo(title="Player Wins", message="Player Wins")
+                    sys.exit()
                 elif self.dealerCount == self.playerCount:
-                    pass 
+                    messagebox.showinfo(title="Push", message="Push")
+                    sys.exit()
                 else:
                     continue
 
