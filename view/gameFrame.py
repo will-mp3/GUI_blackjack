@@ -115,7 +115,7 @@ class GameFrame(tk.Frame):
         pass
 
     def dealerAction(self):
-        self.game.dealerCount = self.game.getCount("d") # show secon card (see start method)
+        self.game.dealerCount = self.game.getCount("d") # show second card (see start method)
         self.dcount.set(str(self.game.dealerCount))
 
         if self.game.dealerCount == 21:
