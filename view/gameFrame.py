@@ -7,7 +7,10 @@ from time import sleep
 class GameFrame(tk.Frame):
 
     def __init__(self, master=None, game=None):
+        # inherite master class
         super().__init__(master)
+
+        # initiate master window
         self.master = master
         self.master.title("blackjack")
         self.master.configure(bg="#228B22")
