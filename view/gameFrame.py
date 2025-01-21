@@ -15,8 +15,10 @@ class GameFrame(tk.Frame):
         self.master.title("blackjack")
         self.master.configure(bg="#228B22")
 
+        # intitiate game
         self.game = game
 
+        # intitiate containers & widgets
         self.create_container()
         self.configure_grid()
         self.create_widgets()
