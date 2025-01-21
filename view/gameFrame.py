@@ -96,7 +96,6 @@ class GameFrame(tk.Frame):
         # call check values to determine outcome
         self.game.hit()
         self.pcount.set(str(self.game.playerCount))
-        self.game.checkPlayer()
         
 
     def stand(self):
