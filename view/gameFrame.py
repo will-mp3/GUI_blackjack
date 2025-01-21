@@ -112,33 +112,3 @@ class GameFrame(tk.Frame):
         # check current player value and decide whether to continue.
         # and double the bet obviously
         pass
-
-    # gameplay
-    def upateValues(self):
-        """
-        update the values for bet, playerChips, playerValue, and dealerValue
-        to be called after every button click or player input
-        """
-        pass
-
-    def checkCounts(self):
-        """
-        checks the count for player and dealer hands
-        used after hit, stand, double to determine gamestate
-        """
-        pass
-
-    def newHand(self):
-        """
-        to be called in conjuction with checkCounts
-        only called once the current hand has ended
-        """
-        pass
-
-    def deckCount(self):
-        """
-        to be used with menu option
-        can change deck count from two up to eight
-        calling this function will instantiate a new hand
-        """
-        pass
