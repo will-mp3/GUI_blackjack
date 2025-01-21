@@ -128,20 +128,6 @@ class Blackjack:
         else:
             self._playAgain()
 
-    def _cardEval(self):
-
-        if self.playerCount <= 21:
-            return True
-        else:
-            return False
-
-    def _checkBJ(self):
-
-        if self.playerCount == 21:
-            return True
-        else:
-            return False
-
 
     def run(self):
         self._clear()
