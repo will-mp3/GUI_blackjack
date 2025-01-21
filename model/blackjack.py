@@ -49,7 +49,7 @@ class Blackjack:
                 messagebox.showinfo(title="Player Wins", message="Player Wins")
                 sys.exit()
             else:
-                messagebox.showinfo(title="Dealer 21", message="Dealer 21")
+                messagebox.showinfo(title="Push", message="Push")
                 sys.exit()
         else:
             while self.dealerCount <= 17:
