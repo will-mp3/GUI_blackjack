@@ -17,11 +17,13 @@ class GameFrame(tk.Frame):
 
         # intitiate game
         self.game = game
+        self.game.start()
 
         # intitiate containers & widgets
         self.create_container()
         self.configure_grid()
         self.create_widgets()
+
 
     def configure_grid(self):
         # 9 x 9 grid to allow for centering
@@ -70,7 +72,7 @@ class GameFrame(tk.Frame):
         self.label.grid(row=0, column=5, sticky="n", padx=10, pady=10)
 
         self.dcount = tk.StringVar()
-        self.dcount.set("0")
+        self.dcount.set(str(self.game.dealerCount))
         self.label = tk.Label(self.container, textvariable=self.dcount, font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
         self.label.grid(row=1, column=5, sticky="n", padx=10, pady=10)
 
@@ -78,7 +80,7 @@ class GameFrame(tk.Frame):
         self.label.grid(row=9, column=5, sticky="s", padx=10, pady=10)
 
         self.pcount = tk.StringVar()
-        self.pcount.set("0")
+        self.pcount.set(str(self.game.playerCount))
         self.label = tk.Label(self.container, textvariable=self.pcount, font=("Arial", 20), bg="#FFFFFF", fg="#353e43")
         self.label.grid(row=8, column=5, sticky="s", padx=10, pady=10)
 
@@ -103,9 +105,7 @@ class GameFrame(tk.Frame):
         # check current player value and decide whether to continue.
         self.hitbutton["state"] = "disabled"
         self.doublebutton["state"] = "disabled"
-        while self.game.dealerCount <= 21:
-            self.game.dealerHit()
-            self.dcount.set(str(self.game.dealerCount))
+        self.game.dealerAction()
 
     def double(self):
         # when hit, this calls for the player side to halt, after this button is hit the player can no longer interact.

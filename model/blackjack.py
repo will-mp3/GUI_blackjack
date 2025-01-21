@@ -17,9 +17,55 @@ class Blackjack:
         self.dealerCount = 0
         self.playerChips = 100
 
+    def start(self):
+        self.deck.shuffleDeck()
+
+        # deal cards, in this order
+        self.playerHand.append(self.deck.dealCard())
+        self.dealerHand.append(self.deck.dealCard())
+        self.playerHand.append(self.deck.dealCard())
+        self.dealerHand.append(self.deck.dealCard())
+
+        self.playerCount = self.getCount("p")
+        self.dealerCount = self.getCount("d")
+
+    def getCount(self, person):
+        count = 0
+        hasAce = False
+
+        if person == "p":
+            for card in self.playerHand:
+                if card.card in ['Jack', 'Queen', 'King']:
+                    count += 10
+                elif card.card == 'Ace':
+                    hasAce = True
+                    count += 11
+                else:
+                    count += int(card.card)
+            
+            if count > 21 and hasAce:
+                count -= 10
+        
+            return count
+
+        if person == "d":
+            for card in self.dealerHand:
+                if card.card in ['Jack', 'Queen', 'King']:
+                    count += 10
+                elif card.card == 'Ace':
+                    hasAce = True
+                    count += 11
+                else:
+                    count += int(card.card)
+            
+            if count > 21 and hasAce:
+                count -= 10
+        
+            return count
+
     def hit(self):
         self.playerHand.append(self.deck.dealCard())  
-        self.playerCount = self._getCount("p")
+        self.playerCount = self.getCount("p")
         self.checkPlayer()          
     
     def checkPlayer(self):
@@ -27,15 +73,17 @@ class Blackjack:
             messagebox.showinfo(title="Player Bust", message="Player Bust")
             sys.exit()
 
+    """
     def checkDealer(self):
-        if self.playerCount > 21:
+        if self.dealerCount > 21:
             messagebox.showinfo(title="Dealer Bust", message="Dealer Bust")
-            sys.exit()  
+            sys.exit() 
+    """ 
 
     def dealerHit(self):
         self.dealerHand.append(self.deck.dealCard())
-        self.dealerCount = self._getCount("d")
-        self.checkDealer()
+        self.dealerCount = self.getCount("d")
+        # self.checkDealer()
 
     def dealerAction(self):
         if self.dealerCount == 21:
@@ -76,40 +124,6 @@ class Blackjack:
         self.playerCount = 0
         self.dealerCount = 0
 
-    def _getCount(self, person):
-        count = 0
-        hasAce = False
-
-        if person == "p":
-            for card in self.playerHand:
-                if card.card in ['Jack', 'Queen', 'King']:
-                    count += 10
-                elif card.card == 'Ace':
-                    hasAce = True
-                    count += 11
-                else:
-                    count += int(card.card)
-            
-            if count > 21 and hasAce:
-                count -= 10
-        
-            return count
-
-        if person == "d":
-            for card in self.dealerHand:
-                if card.card in ['Jack', 'Queen', 'King']:
-                    count += 10
-                elif card.card == 'Ace':
-                    hasAce = True
-                    count += 11
-                else:
-                    count += int(card.card)
-            
-            if count > 21 and hasAce:
-                count -= 10
-        
-            return count
-
 
     def _playAgain(self):
 
@@ -136,61 +150,7 @@ class Blackjack:
             return True
         else:
             return False
-    
-    def hit(self):
 
-        self.playerHand.append(self.deck.dealCard())  
-        self.playerCount = self._getCount("p")          
-        val = self._cardEval()
-
-        return val
-
-    def _dealerAction(self, bet):
-        if self.dealerCount == 21:
-            #print("Dealer showing 21. You lose.")
-            self.playerChips -= bet
-            self._playAgain()
-        elif self.dealerCount >= 17:
-            if self.dealerCount > self.playerCount:
-                #print("Dealer showing", self.dealerHand[0].printCard()+ ",", self.dealerHand[1].printCard() + ". You lose.")
-                #print()
-                self.playerChips -= bet
-                self._playAgain()
-            elif self.dealerCount < self.playerCount:
-                #print("Dealer showing", self.dealerHand[0].printCard()+ ",", self.dealerHand[1].printCard() + ". You win!")
-                #print()
-                self.playerChips += bet
-                self._playAgain()
-            else:
-                #print("Dealer showing", self.dealerHand[0].printCard()+ ",", self.dealerHand[1].printCard() + ". Push.")
-                #print()
-                self._playAgain()
-        else:
-            #print("Dealer showing", self.dealerHand[0].printCard()+ ",", self.dealerHand[1].printCard())
-            #print()
-            while self.dealerCount <= 17:
-                self._dealerHit()
-                if self.dealerCount > 21:
-                    #print()
-                    #print("You win!")
-                    self.playerChips += bet
-                    self._playAgain()
-                elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount > self.playerCount: 
-                    #print()
-                    #print("You lose.")
-                    self.playerChips -= bet
-                    self._playAgain()
-                elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount < self.playerCount:
-                    #print()
-                    #print("You win!")
-                    self.playerChips += bet
-                    self._playAgain()
-                elif self.dealerCount == self.playerCount:
-                    #print()
-                    #print("Push.")
-                    self._playAgain()
-                else:
-                    continue
 
     def run(self):
         self._clear()
