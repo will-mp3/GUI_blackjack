@@ -1,5 +1,6 @@
 from model.blackjack import Blackjack
 from view.gameFrame import GameFrame
+from view.instructionFrame import InstructionFrame
 
 import tkinter as tk
 
