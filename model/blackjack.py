@@ -23,11 +23,11 @@ class Blackjack:
         # deal cards, in this order
         self.playerHand.append(self.deck.dealCard())
         self.dealerHand.append(self.deck.dealCard())
+        self.dealerCount = self.getCount("d") # only show first card
         self.playerHand.append(self.deck.dealCard())
         self.dealerHand.append(self.deck.dealCard())
 
         self.playerCount = self.getCount("p")
-        self.dealerCount = self.getCount("d")
 
     def getCount(self, person):
         count = 0
@@ -78,6 +78,8 @@ class Blackjack:
         self.dealerCount = self.getCount("d")
 
     def dealerAction(self):
+        self.dealerCount = self.getCount("d") # show secon card (see start method)
+
         if self.dealerCount == 21:
             messagebox.showinfo(title="Dealer 21", message="Dealer 21")
             sys.exit()
@@ -127,7 +129,6 @@ class Blackjack:
             return False
         else:
             self._playAgain()
-
 
     def run(self):
         self._clear()
