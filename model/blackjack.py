@@ -118,12 +118,11 @@ class Blackjack:
                 else:
                     continue
 
-    def _clear(self):
+    def clear(self):
         self.deck = Deck(self.deckCount)
         self.dealerHand, self.playerHand = [], []
         self.playerCount = 0
         self.dealerCount = 0
-
 
     def _playAgain(self):
 
