@@ -3,6 +3,7 @@ from model.blackjack import Blackjack
 import tkinter as tk
 from tkinter import messagebox
 from time import sleep
+import sys
 
 class GameFrame(tk.Frame):
 
@@ -105,10 +106,38 @@ class GameFrame(tk.Frame):
         # check current player value and decide whether to continue.
         self.hitbutton["state"] = "disabled"
         self.doublebutton["state"] = "disabled"
-        self.game.dealerAction()
+        self.dealerAction()
 
     def double(self):
         # when hit, this calls for the player side to halt, after this button is hit the player can no longer interact.
         # check current player value and decide whether to continue.
         # and double the bet obviously
         pass
+
+    def dealerAction(self):
+        self.game.dealerCount = self.game.getCount("d") # show secon card (see start method)
+        self.dcount.set(str(self.game.dealerCount))
+
+        if self.game.dealerCount == 21:
+            messagebox.showinfo(title="Dealer 21", message="Dealer 21")
+        elif self.game.dealerCount >= 17:
+            if self.game.dealerCount > self.game.playerCount:
+                messagebox.showinfo(title="Dealer Wins", message="Dealer Wins")
+            elif self.game.dealerCount < self.game.playerCount:
+                messagebox.showinfo(title="Player Wins", message="Player Wins")
+            else:
+                messagebox.showinfo(title="Push", message="Push")
+        else:
+            while self.game.dealerCount <= 17:
+                self.game.dealerHit()
+                self.dcount.set(str(self.game.dealerCount))
+                if self.game.dealerCount > 21:
+                    messagebox.showinfo(title="Dealer Bust", message="Dealer Bust")
+                elif self.game.dealerCount < 21 and self.game.dealerCount >= 17 and self.game.dealerCount > self.game.playerCount: 
+                    messagebox.showinfo(title="Dealer Wins", message="Dealers Wins")
+                elif self.game.dealerCount < 21 and self.game.dealerCount >= 17 and self.game.dealerCount < self.game.playerCount:
+                    messagebox.showinfo(title="Player Wins", message="Player Wins")
+                elif self.game.dealerCount == self.game.playerCount:
+                    messagebox.showinfo(title="Push", message="Push")
+                else:
+                    continue
