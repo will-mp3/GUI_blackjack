@@ -83,7 +83,6 @@ class Blackjack:
         self.dealerCount = 0
 
     def playAgain(self):
-
         if self.playerChips <= 0:
             return
         choice = input("Would you like to play again? (Y/N) ")
