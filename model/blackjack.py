@@ -76,41 +76,6 @@ class Blackjack:
         self.dealerHand.append(self.deck.dealCard())
         self.dealerCount = self.getCount("d")
 
-    def dealerAction(self):
-        self.dealerCount = self.getCount("d") # show secon card (see start method)
-
-        if self.dealerCount == 21:
-            messagebox.showinfo(title="Dealer 21", message="Dealer 21")
-            sys.exit()
-        elif self.dealerCount >= 17:
-            if self.dealerCount > self.playerCount:
-                messagebox.showinfo(title="Dealer Wins", message="Dealer Wins")
-                sys.exit()
-            elif self.dealerCount < self.playerCount:
-                messagebox.showinfo(title="Player Wins", message="Player Wins")
-                sys.exit()
-            else:
-                messagebox.showinfo(title="Push", message="Push")
-                sys.exit()
-        else:
-            while self.dealerCount <= 17:
-                sleep(2.0)
-                self._dealerHit()
-                if self.dealerCount > 21:
-                    messagebox.showinfo(title="Dealer Bust", message="Dealer Bust")
-                    sys.exit()
-                elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount > self.playerCount: 
-                    messagebox.showinfo(title="Dealer Wins", message="Dealers Wins")
-                    sys.exit()
-                elif self.dealerCount < 21 and self.dealerCount >= 17 and self.dealerCount < self.playerCount:
-                    messagebox.showinfo(title="Player Wins", message="Player Wins")
-                    sys.exit()
-                elif self.dealerCount == self.playerCount:
-                    messagebox.showinfo(title="Push", message="Push")
-                    sys.exit()
-                else:
-                    continue
-
     def clear(self):
         self.deck = Deck(self.deckCount)
         self.dealerHand, self.playerHand = [], []
