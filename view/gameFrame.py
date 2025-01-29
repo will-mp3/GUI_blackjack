@@ -25,7 +25,6 @@ class GameFrame(tk.Frame):
         self.configure_grid()
         self.create_widgets()
 
-
     def configure_grid(self):
         # 9 x 9 grid to allow for centering
         for i in range(10):
