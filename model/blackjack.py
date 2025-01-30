@@ -32,7 +32,7 @@ class Blackjack:
 
     def getCount(self, person):
         count = 0
-        hasAce = False
+        hasAce = False # boolean to handle soft aces
 
         # count for player
         if person == "p":
