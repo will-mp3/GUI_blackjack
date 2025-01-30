@@ -34,6 +34,7 @@ class Blackjack:
         count = 0
         hasAce = False
 
+        # count for player
         if person == "p":
             for card in self.playerHand:
                 if card.card in ['Jack', 'Queen', 'King']:
@@ -49,6 +50,7 @@ class Blackjack:
         
             return count
 
+        # count to update dealer
         if person == "d":
             for card in self.dealerHand:
                 if card.card in ['Jack', 'Queen', 'King']:
