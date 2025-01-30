@@ -67,6 +67,7 @@ class Blackjack:
             return count
 
     def hit(self):
+        # updates player count and calls chekc player
         self.playerHand.append(self.deck.dealCard())  
         self.playerCount = self.getCount("p")
         self.checkPlayer()          
