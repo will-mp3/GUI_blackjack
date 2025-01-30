@@ -5,8 +5,6 @@ import sys
 import tkinter as tk
 from tkinter import messagebox
 
-from time import sleep
-
 class Blackjack:
 
     def __init__(self, deckCount):
