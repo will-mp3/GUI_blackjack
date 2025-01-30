@@ -1,8 +1,6 @@
 from .deck import Deck
 from .card import Card
 
-import sys
-import tkinter as tk
 from tkinter import messagebox
 
 class Blackjack:
