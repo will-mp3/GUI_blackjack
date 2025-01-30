@@ -10,6 +10,7 @@ from time import sleep
 class Blackjack:
 
     def __init__(self, deckCount):
+        # initialize all blackjack class variables
         self.deckCount = deckCount
         self.deck = Deck(self.deckCount)
         self.dealerHand, self.playerHand = [], []
