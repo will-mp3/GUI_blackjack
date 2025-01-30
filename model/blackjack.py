@@ -16,7 +16,7 @@ class Blackjack:
         self.dealerHand, self.playerHand = [], []
         self.playerCount = 0
         self.dealerCount = 0
-        self.playerChips = 100
+        self.playerChips = 100 # default bet
 
     def start(self):
         self.deck.shuffleDeck()
