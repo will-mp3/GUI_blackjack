@@ -119,6 +119,7 @@ class GameFrame(tk.Frame):
         self.dcount.set(str(self.game.dealerCount))
 
         if self.game.dealerCount == 21:
+            # dealer blackjack
             messagebox.showinfo(title="Dealer 21", message="Dealer 21")
         elif self.game.dealerCount >= 17:
             if self.game.dealerCount > self.game.playerCount:
