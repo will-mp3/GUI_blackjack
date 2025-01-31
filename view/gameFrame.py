@@ -136,6 +136,7 @@ class GameFrame(tk.Frame):
                 self.game.dealerHit()
                 self.dcount.set(str(self.game.dealerCount))
                 if self.game.dealerCount > 21:
+                    # dealer bust
                     messagebox.showinfo(title="Dealer Bust", message="Dealer Bust")
                 elif self.game.dealerCount < 21 and self.game.dealerCount >= 17 and self.game.dealerCount > self.game.playerCount: 
                     messagebox.showinfo(title="Dealer Wins", message="Dealers Wins")
