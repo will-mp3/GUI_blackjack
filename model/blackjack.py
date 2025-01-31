@@ -69,6 +69,7 @@ class Blackjack:
         self.checkPlayer()          
     
     def checkPlayer(self):
+        # checks for player bust
         if self.playerCount > 21:
             messagebox.showinfo(title="Player Bust", message="Player Bust")
 
