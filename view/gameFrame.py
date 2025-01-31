@@ -131,8 +131,8 @@ class GameFrame(tk.Frame):
             else:
                 # push
                 messagebox.showinfo(title="Push", message="Push")
-        else:
-            while self.game.dealerCount <= 17:
+        else: # dealer action
+            while self.game.dealerCount <= 17: # action until dealer stands
                 self.game.dealerHit()
                 self.dcount.set(str(self.game.dealerCount))
                 if self.game.dealerCount > 21:
