@@ -32,6 +32,7 @@ class GameFrame(tk.Frame):
             self.container.grid_columnconfigure(i, weight=1)
 
     def create_container(self):
+        # create container object for widgets
         self.container = tk.Frame(self.master, bg="#228B22", highlightbackground="#4B3621", highlightthickness=12)
         self.container.grid(row=0, column=0, rowspan=10, columnspan=10, padx=10, pady=10, sticky="nsew")
 
