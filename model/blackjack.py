@@ -74,6 +74,7 @@ class Blackjack:
             messagebox.showinfo(title="Player Bust", message="Player Bust")
 
     def dealerHit(self):
+        # adds card object to dealers hand and updates count
         self.dealerHand.append(self.deck.dealCard())
         self.dealerCount = self.getCount("d")
 
