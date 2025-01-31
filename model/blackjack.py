@@ -79,6 +79,7 @@ class Blackjack:
         self.dealerCount = self.getCount("d")
 
     def clear(self):
+        # TODO
         self.deck = Deck(self.deckCount)
         self.dealerHand, self.playerHand = [], []
         self.playerCount = 0
