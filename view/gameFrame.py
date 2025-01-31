@@ -123,11 +123,13 @@ class GameFrame(tk.Frame):
             messagebox.showinfo(title="Dealer 21", message="Dealer 21")
         elif self.game.dealerCount >= 17: # dealer stands
             if self.game.dealerCount > self.game.playerCount:
-                
+                # dealer win
                 messagebox.showinfo(title="Dealer Wins", message="Dealer Wins")
             elif self.game.dealerCount < self.game.playerCount:
+                # player win
                 messagebox.showinfo(title="Player Wins", message="Player Wins")
             else:
+                # push
                 messagebox.showinfo(title="Push", message="Push")
         else:
             while self.game.dealerCount <= 17:
